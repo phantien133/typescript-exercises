@@ -31,12 +31,8 @@ interface Admin {
     role: string;
 }
 
-type PowerUser = {
+interface PowerUser extends Omit<User, 'type'>, Omit<Admin, 'type'> {
     type: 'powerUser';
-    name: string;
-    age: number;
-    role: string;
-    occupation: string;
 };
 
 export type Person = User | Admin | PowerUser;
