@@ -72,7 +72,9 @@ export type ApiResponse<T> = (
   }
 );
 
-export function promisify<T>(arg: (callback: (response: ApiResponse<T>) => void) => void): () => Promise<T> {
+type callbackArg<T> = (callback: (response: ApiResponse<T>) => void) => void;
+type promiseReturnValue<T> = () => Promise<T>
+export function promisify<T>(arg: callbackArg<T>): promiseReturnValue<T> {
   return () => {
       return new Promise<T>((resolve, reject) => {
           arg((response) => {
