@@ -1,9 +1,10 @@
 declare module 'stats' {
-  export function getMaxIndex(input: any, comparator: any): any;
-  export function getMaxElement(input: any, comparator: any): any;
-  export function getMinIndex(input: any, comparator: any): any;
-  export function getMinElement(input: any, comparator: any): any;
-  export function getMedianIndex(input: any, comparator: any): any;
-  export function getMedianElement(input: any, comparator: any): any;
-  export function getAverageValue(input: any, comparator: any): any;
+  type comparator<T> = (a: T, b: T) => number; 
+export function getMaxIndex<T>(input: T[], comparator: comparator<T>): number;
+export function getMaxElement<T>(input: T[], comparator: comparator<T>): T | null;
+export function getMinIndex<T>(input: T[], comparator: comparator<T>): number;
+export function getMinElement<T>(input: T[], comparator: comparator<T>): T | null;
+export function getMedianIndex<T>(input: T[], comparator: comparator<T>): number;
+export function getMedianElement<T>(input: T[], comparator: comparator<T>): T | null;
+export function getAverageValue<T, V>(input: T[], comparator: ({}: T) => number): number | null;
 }
