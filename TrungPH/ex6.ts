@@ -29,15 +29,13 @@ export function logPerson(person: Person) {
   );
 }
 
-export function getObjKeys<T extends object>(obj: T): (keyof T)[] {
-  return Object.keys(obj) as (keyof T)[];
-}
-
+export function filterPersons(persons: Person[], personType: User['type'], criteria: Partial<Omit<User, 'type'>>): User[];
+export function filterPersons(persons: Person[], personType: Admin['type'], criteria: Partial<Omit<Admin, 'type'>>): Admin[];
 export function filterPersons(persons: Person[], personType: string, criteria: Partial<Person>): Person[] {
   return persons
       .filter((person) => person.type === personType)
       .filter((person) => {
-          let criteriaKeys = getObjKeys(criteria) as (keyof Person)[];
+          let criteriaKeys = Object.keys(criteria) as (keyof Person)[];
           return criteriaKeys.every((fieldName) => {
               return person[fieldName] === criteria[fieldName];
           });

@@ -35,16 +35,9 @@ export type ApiResponse<T> = (
   }
 );
 
-type AdminsApiResponse = (
-  {
-      status: 'success';
-      data: Admin[];
-  } |
-  {
-      status: 'error';
-      error: string;
-  }
-);
+type AdminsApiResponse =  ApiResponse<Admin[]>;
+
+type UsersApiResponse = ApiResponse<User[]>;
 
 export function requestAdmins(callback: (response: AdminsApiResponse) => void) {
   callback({
@@ -52,17 +45,6 @@ export function requestAdmins(callback: (response: AdminsApiResponse) => void) {
       data: admins
   });
 }
-
-type UsersApiResponse = (
-  {
-      status: 'success';
-      data: User[];
-  } |
-  {
-      status: 'error';
-      error: string;
-  }
-);
 
 export function requestUsers(callback: (response: UsersApiResponse) => void) {
   callback({
@@ -78,7 +60,7 @@ export function requestCurrentServerTime(callback: (response: ApiResponse<number
   });
 }
 
-export function requestCoffeeMachineQueueLength(callback: (response: ApiResponse<string>) => void) {
+export function requestCoffeeMachineQueueLength(callback: (response: ApiResponse<number>) => void) {
   callback({
       status: 'error',
       error: 'Numeric value has exceeded Number.MAX_SAFE_INTEGER.'
