@@ -57,15 +57,16 @@ export function logPerson(person: Person) {
       ` - ${person.name}, ${person.age}, ${person.type === 'admin' ? person.role : person.occupation}`
   );
 }
-
-export function filterPersons(persons: Person[], personType: string,  criteria: Omit<Person, "name" | "type" >): Person[] {
+export function filterPersons(persons: Person[], personType: User['type'], criteria: Partial<Omit<User, 'type'>>): User[];
+export function filterPersons(persons: Person[], personType: Admin['type'], criteria: Partial<Omit<Admin, 'type'>>): Admin[];
+export function filterPersons(persons: Person[], personType: Person['type'], criteria: Partial<Person>): Person[] {
   return persons
       .filter((person) => person.type === personType)
       .filter((person) => {
-        let criteriaKeys = Object.keys(criteria) as (keyof Person)[];
-        return criteriaKeys.every((fieldName) => {
-            return person[fieldName] === (criteria)[fieldName];
-        });
+          let criteriaKeys = Object.keys(criteria) as (keyof Person)[];
+          return criteriaKeys.every((fieldName) => {
+              return person[fieldName] === criteria[fieldName];
+          });
       });
 }
 
