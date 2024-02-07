@@ -2,3 +2,37 @@ node_modules/
 package.json
 package-lock.json
 yarn.lock
+
+# VietNQ
+VietNQ/project/node_modules/
+VietNQ/project/dist/
+VietNQ/project/.env
+
+VietNQ/project/logs
+VietNQ/project/*.log
+VietNQ/project/npm-debug.log*
+VietNQ/project/pnpm-debug.log*
+VietNQ/project/yarn-debug.log*
+VietNQ/project/yarn-error.log*
+VietNQ/project/lerna-debug.log*
+
+VietNQ/project/.DS_Store
+
+VietNQ/project/coverage
+VietNQ/project/.nyc_output
+
+VietNQ/project/.idea
+VietNQ/project/.project
+VietNQ/project/.classpath
+VietNQ/project/.c9/
+VietNQ/project/*.launch
+VietNQ/project/.settings/
+VietNQ/project/*.sublime-workspace
+
+VietNQ/project/.vscode/*
+VietNQ/project/!.vscode/settings.json
+VietNQ/project/!.vscode/tasks.json
+VietNQ/project/!.vscode/launch.json
+VietNQ/project/!.vscode/extensions.json
+
+# Vùng trên là lãnh thổ của em Việt nha
