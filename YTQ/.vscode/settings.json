@@ -1,0 +1,21 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  },
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.next": false,
+    "**/out": false,
+    "**/coverage": true,
+    "**/storybook-static": true
+  },
+  "files.eol": "\n",
+  "css.customData": [
+    ".vscode/tailwind.json"
+  ],
+  "CodeGPT.apiKey": "CodeGPT Plus Beta"
+}
