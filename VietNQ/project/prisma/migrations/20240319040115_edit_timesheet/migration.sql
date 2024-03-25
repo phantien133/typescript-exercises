@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "TimeSheet" ALTER COLUMN "checkInTime" DROP NOT NULL,
+ALTER COLUMN "CheckOutTime" DROP NOT NULL;
