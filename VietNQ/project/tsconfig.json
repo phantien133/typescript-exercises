@@ -10,6 +10,13 @@
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
+    "paths": {
+      "src/*": ["src/*"],
+      "@module/*": ["src/modules/*"],
+      "@utils/*": ["src/utils/*"],
+      "@decorators/*": ["src/decorators/*"],
+      "@config/*": ["src/config/*"],
+    },
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": false,
